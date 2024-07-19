@@ -17,6 +17,10 @@ We will be conducting the interview via MS Teams and recording the interview so 
 
 This interview is a work in progress, so if you have any recommendations or feedback, please let us know via LinkedIn.
 
+## Practical exercise privacy: duplicate vs fork
+
+If you would prefer to keep your work private, please duplicate the repository instead of forking it.
+
 ## Instructions
 1. Fork this repo to a private repo of your own and add [GhelAerora](https://github.com/GhelAerora)
 2. Fill out Section 1 and 2 and commit to your repo by 11am US Pacific Time the morning of the interview
