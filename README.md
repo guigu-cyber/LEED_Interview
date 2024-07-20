@@ -141,13 +141,11 @@ Enhanced Privacy Features: Expand privacy settings to include options like app d
 A client wants to save video from the sensor to the drone's SD card in the air and also wants to stream the video to the Internet AND save it to the the Android ground control station itself.
 
 **2.3.1. Identify the relevant components in QGroundControl that are involved in this use case and provide a high level sketch for presentation to the engineering team. You can use whatever formal or informal diagramming method you prefer. Link to the related artifact in your repository within this markdown file.**
-
 Relevant Components in QGroundControl
-Video Streaming Module: Manages the streaming of video from the drone to the ground control station and the internet.
-Video Recording Module: Handles saving video to the drone's SD card and the ground control station.
-Communication Interface: Facilitates data transfer between the drone and the ground control station.
-Network Interface: Manages internet connectivity for streaming purposes.
-High-Level Sketch
+- **Video Streaming Module**: Manages the streaming of video from the drone to the ground control station and the internet.
+- **Video Recording Module**: Handles saving video to the drone's SD card and the ground control station.
+- **Communication Interface**: Facilitates data transfer between the drone and the ground control station.
+- **Network Interface**: Manages internet connectivity for streaming purposes.
 
     [Drone Sensors]
           |
