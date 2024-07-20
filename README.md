@@ -58,12 +58,13 @@ If you would prefer to keep your work private, please duplicate the repository i
 
 ## 1.2. Most Qualifying Background
 **What technical experience most qualifies you for this position? Please describe the associated technical aspects.**
-Software Development: Proficient in C, C++, Objective C, Java, Python.
-Wireless Connectivity: Expertise in Wi-Fi, BT, GNSS Coexistence, IMS Voice, Wi-Fi Calling, and Video over LTE.
-System Architecture: Experience with 3G-5G firmware and software, MAC, modem protocols, QoS, RF/baseband performance.
-Team Management: Managed a team supporting Google Fi connectivity and collaborated with Google Home and Waymo teams.
-System Diagnostics: Improved Google Fi diagnosing system efficiency by 30%.
-Vendor Collaboration: Assessed IMS stacks and sustained Apple IMS requirements through carrier collaborations.
+
+- **Software Development**: Proficient in C, C++, Objective C, Java, Python.
+- **Wireless Connectivity**: Expertise in Wi-Fi, BT, GNSS Coexistence, IMS Voice, Wi-Fi Calling, and Video over LTE.
+- **System Architecture**: Experience with 3G-5G firmware and software, MAC, modem protocols, QoS, RF/baseband performance.
+- **Team Management**: Managed a team supporting Google Fi connectivity and collaborated with Google Home and Waymo teams.
+- **System Diagnostics**: Improved Google Fi diagnosing system efficiency by 30%.
+- **Vendor Collaboration**: Assessed IMS stacks and sustained Apple IMS requirements through carrier collaborations.
 
 ## 1.3. Skill Gap Plan
 **Based on the job description and what you understand the role to be, what is the most significant technical skill you are missing and how will you go about learning that skill?**
