@@ -143,12 +143,14 @@ A client wants to save video from the sensor to the drone's SD card in the air a
 **2.3.1. Identify the relevant components in QGroundControl that are involved in this use case and provide a high level sketch for presentation to the engineering team. You can use whatever formal or informal diagramming method you prefer. Link to the related artifact in your repository within this markdown file.**
 
 Relevant Components in QGroundControl
+
 Video Streaming Module: Manages the streaming of video from the drone to the ground control station and the internet.
 Video Recording Module: Handles saving video to the drone's SD card and the ground control station.
 Communication Interface: Facilitates data transfer between the drone and the ground control station.
 Network Interface: Manages internet connectivity for streaming purposes.
 
-```mermaid
+
+
 graph TD
     A[Drone Sensors] -->|Capture Video| B[Video Streaming Module]
     B --> C[Communication Interface]
