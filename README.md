@@ -143,23 +143,32 @@ A client wants to save video from the sensor to the drone's SD card in the air a
 **2.3.1. Identify the relevant components in QGroundControl that are involved in this use case and provide a high level sketch for presentation to the engineering team. You can use whatever formal or informal diagramming method you prefer. Link to the related artifact in your repository within this markdown file.**
 
 Relevant Components in QGroundControl
-
 Video Streaming Module: Manages the streaming of video from the drone to the ground control station and the internet.
 Video Recording Module: Handles saving video to the drone's SD card and the ground control station.
 Communication Interface: Facilitates data transfer between the drone and the ground control station.
 Network Interface: Manages internet connectivity for streaming purposes.
 
 
+High-Level Sketch
+
 
 graph TD
     A[Drone Sensors] -->|Capture Video| B[Video Streaming Module]
-    B --> C[Communication Interface]
-    B --> D[SD Card Storage]
-    C --> E[Android Ground Control Station]
-    E -->|Stream Video| F[Network Interface]
-    E -->|Save Video| G[Local Storage]
+    B --> C[Video Encoder]
+    C --> D[RTSP/RTMP Protocols]
+    D --> E[Communication Interface]
+    B --> F[Video Recording Module]
+    F --> G[SD Card Interface]
+    E -->|Stream Video| H[Network Interface]
+    E -->|Transmit Data| I[MAVLink Protocol]
+    E --> J[Android Ground Control Station]
+    J -->|Save Video| K[Local Storage Handler]
+    H --> L[Wi-Fi/Cellular Modules]
+    J --> M[User Interface]
 
-    E --> H[User Interface]
+    M --> N[User Controls]
+    N --> O[Start/Stop Recording]
+    N --> P[Stream Management]
 
 
 [Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
