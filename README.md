@@ -148,32 +148,25 @@ Relevant Components in QGroundControl
 - **Network Interface**: Manages internet connectivity for streaming purposes.
 
 
+```mermaid
+flowchart LR
+subgraph Drone
+    A[Drone Sensors] --> B{Video Streaming Module}
+    B --> C[Video Encoder]
+    B --> D[RTSP/RTMP Protocols]
+    B --> E[Video Recording Module]
+    C --> F[Comm Interface]
+    E --> G[SD Card]
+    E --> H[Local Storage]
+end
 
+subgraph Ground Station
+    I[Android Ground Control Station] --> J[User Interface]
+    I --> K[Wi-Fi/Cellular Modules]
+    I --> L[User Controls]
+end
 
-
-    [Drone Sensors]
-          |
-          v
-  
- [Video Streaming Module]
- 
-   /           |          \
-[Video   [RTSP/RTMP]  [Video Recording]
-
-Encoder] [Protocols] [Module]
-   |        /     \        |
-   v       /       \       v
-[Comm Interface] [SD Card] [Local Storage]
-   |              |              |
-   v              v              v
-[Android Ground Control Station]
-   |                 |                   |
-   v                 v                   v
-[User Interface] [Wi-Fi/Cellular] [User Controls]
-                   [Modules]
-
-
-
+F --> I
 
 
 [Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
