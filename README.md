@@ -150,24 +150,24 @@ Relevant Components in QGroundControl
 
 ```mermaid
 flowchart LR
-subgraph Drone
-    A[Drone Sensors] --> B{Video Streaming Module}
-    B --> C[Video Encoder]
-    B --> D[RTSP/RTMP Protocols]
-    B --> E[Video Recording Module]
+    subgraph Drone
+        A[Drone Sensors] --> B{Video Streaming Module}
+        B --> C[Video Encoder]
+        B --> D[RTSP/RTMP Protocols]
+        B --> E[Video Recording Module]
+        E --> G[SD Card]
+        E --> H[Local Storage]
+    end
+
+    subgraph Ground Station
+        I[Android Ground Control Station] --> J[User Interface]
+        I --> K[Wi-Fi/Cellular Modules]
+        I --> L[User Controls]
+    end
+
     C --> F[Comm Interface]
-    E --> G[SD Card]
-    E --> H[Local Storage]
-end
-
-subgraph Ground Station
-    I[Android Ground Control Station] --> J[User Interface]
-    I --> K[Wi-Fi/Cellular Modules]
-    I --> L[User Controls]
-end
-
-F --> I
-
+    F --> I
+```
 
 [Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
 
