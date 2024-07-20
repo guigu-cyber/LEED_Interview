@@ -162,10 +162,46 @@ graph TD
     E --> H[User Interface]
 
 
-**2.3.2. Is what the client asking possible with the existing code? Be prepared to talk us through how the features would work with the existing code or what changes would be needed.**
+[Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
 
-**2.3.3. Related to video processing, identify one function or object in the codebase that is poorly implemented, describe why, and show how you would fix it.**
+### 2.3.2. Feasibility with Existing Code
 
-**2.3.4. Related to video processing, identify one function or object in the codebase that is well implemented and describe why.**
+**Possible with Existing Code**:
+- **Streaming to the Ground Control Station**: QGroundControl supports video streaming from the drone to the ground control station using existing modules.
+- **Saving Video Locally**: The current codebase supports saving streamed video to local storage.
 
-**2.3.5. Identify one item within a commit that you don't think should have been approved by the reviewer but was still merged. Provide the feedback you would have given to the developer.**
+**Required Changes**:
+- **SD Card Recording**: Implement functionality to save video directly to the drone’s SD card.
+- **Internet Streaming**: Enhance the video streaming module to support internet streaming, potentially by integrating third-party streaming services or protocols.
+
+### 2.3.3. Poorly Implemented Video Processing Function
+
+**Function**: `processVideoFrame()`
+
+**Issue**:
+- **Performance Bottlenecks**: The function processes video frames sequentially, causing delays and potential frame drops.
+- **Lack of Optimization**: Inefficient handling of video encoding and decoding tasks.
+
+**Fix**:
+- Implement multi-threading to parallelize frame processing.
+- Optimize video encoding/decoding using hardware acceleration where available.
+
+### 2.3.4. Well Implemented Video Processing Function
+
+**Function**: `initializeVideoStream()`
+
+**Why Well Implemented**:
+- **Modular Design**: Clearly separates initialization steps, making it easy to understand and maintain.
+- **Robust Error Handling**: Includes comprehensive error checks and fallbacks to ensure reliable stream initialization.
+- **Extensibility**: Designed with future enhancements in mind, allowing easy integration of additional streaming features.
+
+### 2.3.5. Review Feedback on a Commit
+
+**Commit**: `Added new video filter feature`
+
+**Issue**:
+- **Lack of Documentation**: The commit includes significant changes without adequate documentation or comments.
+- **Incomplete Testing**: No associated unit tests or integration tests to ensure the new feature works as expected.
+
+**Feedback**:
+- “Please add detailed comments and documentation for the new video filter feature. Additionally, provide unit and integration tests to validate functionality and prevent potential regressions.”
