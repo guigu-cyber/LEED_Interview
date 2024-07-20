@@ -151,24 +151,23 @@ Network Interface: Manages internet connectivity for streaming purposes.
 
 High-Level Sketch
 
-
-graph TD
-    A[Drone Sensors] -->|Capture Video| B[Video Streaming Module]
-    B --> C[Video Encoder]
-    C --> D[RTSP/RTMP Protocols]
-    D --> E[Communication Interface]
-    B --> F[Video Recording Module]
-    F --> G[SD Card Interface]
-    E -->|Stream Video| H[Network Interface]
-    E -->|Transmit Data| I[MAVLink Protocol]
-    E --> J[Android Ground Control Station]
-    J -->|Save Video| K[Local Storage Handler]
-    H --> L[Wi-Fi/Cellular Modules]
-    J --> M[User Interface]
-
-    M --> N[User Controls]
-    N --> O[Start/Stop Recording]
-    N --> P[Stream Management]
+    [Drone Sensors]
+          |
+          v
+ [Video Streaming Module]
+   /           |          \
+[Video   [RTSP/RTMP]  [Video Recording]
+Encoder] [Protocols] [Module]
+   |        /     \        |
+   v       /       \       v
+[Comm Interface] [SD Card] [Local Storage]
+   |              |              |
+   v              v              v
+[Android Ground Control Station]
+   |                 |                   |
+   v                 v                   v
+[User Interface] [Wi-Fi/Cellular] [User Controls]
+                   [Modules]
 
 
 [Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
