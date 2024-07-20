@@ -147,6 +147,10 @@ Relevant Components in QGroundControl
 - **Communication Interface**: Facilitates data transfer between the drone and the ground control station.
 - **Network Interface**: Manages internet connectivity for streaming purposes.
 
+
+
+
+
     [Drone Sensors]
           |
           v
@@ -164,6 +168,9 @@ Encoder] [Protocols] [Module]
    v                 v                   v
 [User Interface] [Wi-Fi/Cellular] [User Controls]
                    [Modules]
+
+
+
 
 
 [Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
