@@ -147,8 +147,6 @@ Video Streaming Module: Manages the streaming of video from the drone to the gro
 Video Recording Module: Handles saving video to the drone's SD card and the ground control station.
 Communication Interface: Facilitates data transfer between the drone and the ground control station.
 Network Interface: Manages internet connectivity for streaming purposes.
-
-
 High-Level Sketch
 
     [Drone Sensors]
