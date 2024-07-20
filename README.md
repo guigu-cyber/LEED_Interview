@@ -31,19 +31,19 @@ If you would prefer to keep your work private, please duplicate the repository i
 ## 1.1. Your background
 | Skill | Expert | Good | Limited | None | Rank |
 |-------|--------|------|---------|------|------|
-| Embedded software development                       |   |   |   |   |     |
-| Drone software development                          |   |   |   |   |     |
-| C/C++ coding proficiency                            |   |   |   |   |     |
-| Embedded system hardware kit based prototyping      |   |   |   |   |     |
-| Linux application development internals             |   |   |   |   |     |
-| QGroundControl modification & enhancement           |   |   |   |   |     |
-| Drone autopilot integration on ArduPilot/PX4        |   |   |   |   |     |
-| Embedded firmware and configuration management      |   |   |   |   |     |
-| Remote development over VPN, SSH, remote server IDE |   |   |   |   |     |
-| Image signal processing                             |   |   |   |   |     |
-| IP camera encoding/decoding and interfaces          |   |   |   |   |     |
-| AI on embedded devices & embedded NPUs              |   |   |   |   |     |
-| Embedded system security                            |   |   |   |   |     |
+| Embedded software development                       | x |   |   |   |     |
+| Drone software development                          |   |   |   | x |     |
+| C/C++ coding proficiency                            | x |   |   |   |     |
+| Embedded system hardware kit based prototyping      |   |   | x |   |     |
+| Linux application development internals             |   | x |   |   |     |
+| QGroundControl modification & enhancement           |   |   | x |   |     |
+| Drone autopilot integration on ArduPilot/PX4        |   |   |   | x |     |
+| Embedded firmware and configuration management      |   | x |   |   |     |
+| Remote development over VPN, SSH, remote server IDE | x |   |   |   |     |
+| Image signal processing                             |   | x |   |   |     |
+| IP camera encoding/decoding and interfaces          |   | x |   |   |     |
+| AI on embedded devices & embedded NPUs              |   | x |   |   |     |
+| Embedded system security                            |   | x |   |   |     |
 
 **For example:**
 ```
