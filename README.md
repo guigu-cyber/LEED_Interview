@@ -58,24 +58,107 @@ If you would prefer to keep your work private, please duplicate the repository i
 
 ## 1.2. Most Qualifying Background
 **What technical experience most qualifies you for this position? Please describe the associated technical aspects.**
+Software Development: Proficient in C, C++, Objective C, Java, Python.
+Wireless Connectivity: Expertise in Wi-Fi, BT, GNSS Coexistence, IMS Voice, Wi-Fi Calling, and Video over LTE.
+System Architecture: Experience with 3G-5G firmware and software, MAC, modem protocols, QoS, RF/baseband performance.
+Team Management: Managed a team supporting Google Fi connectivity and collaborated with Google Home and Waymo teams.
+System Diagnostics: Improved Google Fi diagnosing system efficiency by 30%.
+Vendor Collaboration: Assessed IMS stacks and sustained Apple IMS requirements through carrier collaborations.
 
 ## 1.3. Skill Gap Plan
 **Based on the job description and what you understand the role to be, what is the most significant technical skill you are missing and how will you go about learning that skill?**
+Drone Software Development:
 
+Online Courses and Certifications: 
+
+Take courses on platforms like Coursera, Udemy, or edX focusing on drone programming and embedded systems.
+Hands-On Projects: Build and program my own drone using development kits and document the process. Platforms like DJI or PX4 provide SDKs and resources.
+Open Source Contributions: Contribute to open-source drone projects like PX4 or ArduPilot to gain practical experience.
+
+Ground Control Station Development (QGroundControl):
+
+Documentation and Tutorials: Study the QGroundControl documentation and follow tutorials to understand its architecture and customization.
+Practical Experience: Set up a development environment for QGroundControl and work on extending or modifying its functionalities.
+Community Engagement: Join forums and communities focused on QGroundControl and drone development to learn from experienced developers.
+Integration with Drone Ecosystems:
+
+ArduPilot/PX4 Autopilot Systems: 
+
+Gain familiarity with these autopilot systems by reading their documentation and implementing projects that integrate these systems with various hardware components.
+Hardware Development Kits: Utilize OEM hardware development kits to build and test drone systems, focusing on the integration of different components.
+By actively engaging in these learning activities and building a portfolio of related projects, I can bridge the skill gap and enhance my qualifications for the position.
 ## 1.4. Highlight
 **Highlight a technical solution where you were the driving force and the technical details behind it.**
-
+Lead architect team for Pixel software and SoC, improving connectivity performance, battery life, and thermal management.
+Telephony/IMS Protocols: Designed signaling protocols and KPIs for Pixel devices and Google Meet/Voice.
+Audio and Video Optimization: Optimized audio codecs for power efficiency and performance in Pixel and Google Meet.
+Wi-Fi and Bluetooth Research: Conducted research on Wi-Fi, BT, GNSS, and LTE coexistence projects.
+Voice Over WiFi: Transferred codec from vendor modem to Google SoC, achieving significant power savings.
 # Section 2. Technical
 ## 2.1. What are two things that you would change about Linux or Android?
+Android
+Reduce Fragmentation:
+
+Android's fragmentation, caused by a wide range of devices running disparate OS versions, hinders development and user experience. To address this:
+
+Accelerated Update Cadence: Implement a more rapid and consistent update schedule, similar to iOS. This can be achieved through modular updates, leveraging Google Play Services for critical components, and providing substantial incentives to manufacturers for timely updates.
+Stricter Version Compatibility: Enforce stricter guidelines for app compatibility with older Android versions to motivate manufacturers and carriers to update devices promptly.
+Enhance Security:
+
+Android's security posture can be fortified by:
+
+Mandatory Security Patches: Impose a strict timeline for device manufacturers to distribute critical security patches, ensuring that all users are protected against emerging threats.
+Granular Permission Management: Provide users with finer control over app permissions, allowing them to grant specific permissions for specific actions or timeframes. This can be complemented by clearer permission justifications to empower informed decisions.
+Enhanced Privacy Features: Expand privacy settings to include options like app data minimization, preventing unnecessary data collection, and offering tools to manage data sharing.
 
 ## 2.2. Describe your preferred task, test, project, and source control management workflows.
 
+### Preferred Task Management Workflow
+- **Task Allocation**: Assign tasks based on team members' expertise.
+- **Tracking**: Use tools like Jira or Trello with clear objectives, deadlines, and priorities.
+- **Communication**: Regular stand-up meetings to address roadblocks and ensure alignment.
+
+### Preferred Test Management Workflow
+- **Test Planning**: Define objectives, scope, and criteria.
+- **Automated Testing**: Use frameworks like Selenium and JUnit for consistency.
+- **Manual Testing**: Perform exploratory and usability tests.
+- **Continuous Integration**: Integrate testing in CI/CD pipelines with Jenkins or GitLab CI.
+
+### Preferred Project Management Workflow
+- **Agile Methodology**: Utilize Scrum or Kanban for flexibility.
+- **Sprint Planning**: Define goals and allocate tasks in sprint meetings.
+- **Progress Tracking**: Use Confluence for documentation and Jira for tracking.
+- **Review and Retrospective**: Conduct reviews and retrospectives to assess and improve performance.
+
+### Preferred Source Control Management Workflow
+- **Branching Strategy**: Use GitFlow with `master`, `develop`, and feature branches.
+- **Code Reviews**: Conduct mandatory reviews via pull requests on GitHub or GitLab.
+- **Continuous Integration**: Use CI tools to build and test changes automatically.
+- **Version Control**: Tag releases and maintain a clear version history for tracking and rollback.
 ## 2.3. Practical exercise
 [QGroundControl](http://qgroundcontrol.com/) is an open source ground control station for drones ([Github](https://github.com/mavlink/qgroundcontrol)).
 
 A client wants to save video from the sensor to the drone's SD card in the air and also wants to stream the video to the Internet AND save it to the the Android ground control station itself.
 
 **2.3.1. Identify the relevant components in QGroundControl that are involved in this use case and provide a high level sketch for presentation to the engineering team. You can use whatever formal or informal diagramming method you prefer. Link to the related artifact in your repository within this markdown file.**
+
+Relevant Components in QGroundControl
+Video Streaming Module: Manages the streaming of video from the drone to the ground control station and the internet.
+Video Recording Module: Handles saving video to the drone's SD card and the ground control station.
+Communication Interface: Facilitates data transfer between the drone and the ground control station.
+Network Interface: Manages internet connectivity for streaming purposes.
+
+```mermaid
+graph TD
+    A[Drone Sensors] -->|Capture Video| B[Video Streaming Module]
+    B --> C[Communication Interface]
+    B --> D[SD Card Storage]
+    C --> E[Android Ground Control Station]
+    E -->|Stream Video| F[Network Interface]
+    E -->|Save Video| G[Local Storage]
+
+    E --> H[User Interface]
+
 
 **2.3.2. Is what the client asking possible with the existing code? Be prepared to talk us through how the features would work with the existing code or what changes would be needed.**
 
