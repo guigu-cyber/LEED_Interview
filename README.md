@@ -154,9 +154,12 @@ Relevant Components in QGroundControl
     [Drone Sensors]
           |
           v
+  
  [Video Streaming Module]
+ 
    /           |          \
 [Video   [RTSP/RTMP]  [Video Recording]
+
 Encoder] [Protocols] [Module]
    |        /     \        |
    v       /       \       v
