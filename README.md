@@ -70,44 +70,37 @@ If you would prefer to keep your work private, please duplicate the repository i
 **Based on the job description and what you understand the role to be, what is the most significant technical skill you are missing and how will you go about learning that skill?**
 Drone Software Development:
 
-Online Courses and Certifications: 
-
+**Online Courses and Certifications**: 
 Take courses on platforms like Coursera, Udemy, or edX focusing on drone programming and embedded systems.
 Hands-On Projects: Build and program my own drone using development kits and document the process. Platforms like DJI or PX4 provide SDKs and resources.
 Open Source Contributions: Contribute to open-source drone projects like PX4 or ArduPilot to gain practical experience.
 
-Ground Control Station Development (QGroundControl):
-
+**Ground Control Station Development (QGroundControl)**:
 Documentation and Tutorials: Study the QGroundControl documentation and follow tutorials to understand its architecture and customization.
 Practical Experience: Set up a development environment for QGroundControl and work on extending or modifying its functionalities.
 Community Engagement: Join forums and communities focused on QGroundControl and drone development to learn from experienced developers.
 Integration with Drone Ecosystems:
 
-ArduPilot/PX4 Autopilot Systems: 
-
+**ArduPilot/PX4 Autopilot Systems**: 
 Gain familiarity with these autopilot systems by reading their documentation and implementing projects that integrate these systems with various hardware components.
 Hardware Development Kits: Utilize OEM hardware development kits to build and test drone systems, focusing on the integration of different components.
 By actively engaging in these learning activities and building a portfolio of related projects, I can bridge the skill gap and enhance my qualifications for the position.
 ## 1.4. Highlight
 **Highlight a technical solution where you were the driving force and the technical details behind it.**
-Lead architect team for Pixel software and SoC, improving connectivity performance, battery life, and thermal management.
-Telephony/IMS Protocols: Designed signaling protocols and KPIs for Pixel devices and Google Meet/Voice.
-Audio and Video Optimization: Optimized audio codecs for power efficiency and performance in Pixel and Google Meet.
-Wi-Fi and Bluetooth Research: Conducted research on Wi-Fi, BT, GNSS, and LTE coexistence projects.
-Voice Over WiFi: Transferred codec from vendor modem to Google SoC, achieving significant power savings.
+- **Lead architect team for Pixel software and SoC**: improving connectivity performance, battery life, and thermal management.
+- **Telephony/IMS Protocols**: Designed signaling protocols and KPIs for Pixel devices and Google Meet/Voice.
+- **Audio and Video Optimization**: Optimized audio codecs for power efficiency and performance in Pixel and Google Meet.
+- **Wi-Fi and Bluetooth Research**: Conducted research on Wi-Fi, BT, GNSS, and LTE coexistence projects.
+- **Voice Over WiFi**: Transferred codec from vendor modem to Google SoC, achieving significant power savings.
 # Section 2. Technical
 ## 2.1. What are two things that you would change about Linux or Android?
-Android
-Reduce Fragmentation:
-
+**Android Reduce Fragmentation**:
 Android's fragmentation, caused by a wide range of devices running disparate OS versions, hinders development and user experience. To address this:
-
 Accelerated Update Cadence: Implement a more rapid and consistent update schedule, similar to iOS. This can be achieved through modular updates, leveraging Google Play Services for critical components, and providing substantial incentives to manufacturers for timely updates.
 Stricter Version Compatibility: Enforce stricter guidelines for app compatibility with older Android versions to motivate manufacturers and carriers to update devices promptly.
 Enhance Security:
 
-Android's security posture can be fortified by:
-
+**Android's security posture can be fortified by**:
 Mandatory Security Patches: Impose a strict timeline for device manufacturers to distribute critical security patches, ensuring that all users are protected against emerging threats.
 Granular Permission Management: Provide users with finer control over app permissions, allowing them to grant specific permissions for specific actions or timeframes. This can be complemented by clearer permission justifications to empower informed decisions.
 Enhanced Privacy Features: Expand privacy settings to include options like app data minimization, preventing unnecessary data collection, and offering tools to manage data sharing.
