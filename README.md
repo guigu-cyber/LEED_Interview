@@ -179,35 +179,37 @@ flowchart LR
 - **Saving Video Locally**: The current codebase supports saving streamed video to local storage.
 
 **Required Changes**:
-- **SD Card Recording**: Implement functionality to save video directly to the drone’s SD card.
-- **Internet Streaming**: Enhance the video streaming module to support internet streaming, potentially by integrating third-party streaming services or protocols.
+- **SD Card Recording**: Implement or extend the existing data recording module to support saving video streams directly to the SD card on the drone.
+Ensure proper file management and synchronization on the drone.
+- **Internet Streaming**:Integrate with a streaming service API (e.g., YouTube, Twitch) to support live video streaming.
+Add support for network protocols and data handling for streaming.
+- **Saving Video to Android GCS**:
+Ensure the Android app can handle both displaying and saving the video feed simultaneously.
+Manage storage permissions and efficient file handling on Android devices.
 
 ### 2.3.3. Poorly Implemented Video Processing Function
 
-**Function**: `processVideoFrame()`
+**Function**: `startRecording() in VideoManager.cpp`
 
 **Issue**:
-- **Performance Bottlenecks**: The function processes video frames sequentially, causing delays and potential frame drops.
-- **Lack of Optimization**: Inefficient handling of video encoding and decoding tasks.
+- **Poor Error handling**: The function has inefficient error handling and does not properly check the available storage space before starting the recording, which could lead to application crashes.
 
 **Fix**:
-- Implement multi-threading to parallelize frame processing.
-- Optimize video encoding/decoding using hardware acceleration where available.
+- Implement isStorageAvailable() check.
+- Add more logging like "Video recording started successfully.".
 
 ### 2.3.4. Well Implemented Video Processing Function
 
-**Function**: `initializeVideoStream()`
+**Class**: `VideoReceiver`
 
 **Why Well Implemented**:
-- **Modular Design**: Clearly separates initialization steps, making it easy to understand and maintain.
-- **Robust Error Handling**: Includes comprehensive error checks and fallbacks to ensure reliable stream initialization.
-- **Extensibility**: Designed with future enhancements in mind, allowing easy integration of additional streaming features.
+- This class is well-implemented because it effectively handles the reception of video streams from the drone. It includes robust error handling, efficient buffering of video data, and a clear interface for starting and stopping video streams. The class uses asynchronous processing to ensure the main application remains responsive during video streaming.
 
 ### 2.3.5. Review Feedback on a Commit
 
 **Commit**: `Added new video filter feature`
 
-https://github.com/mavlink/qgroundcontrol/commit/cce47c62df57c0c47ff2516429bde02c7de671c3
+[VideoManager: Fix GStreamer & UVC Setup](https://github.com/mavlink/qgroundcontrol/commit/cce47c62df57c0c47ff2516429bde02c7de671c3)
 
 **Issue**:
 - **Iterator Invalidation**: VideoManager::~VideoManager() 
