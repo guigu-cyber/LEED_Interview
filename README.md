@@ -141,6 +141,12 @@ Relevant Components in QGroundControl
 - **Communication Interface**: Facilitates data transfer between the drone and the ground control station.
 - **Network Interface**: Manages internet connectivity for streaming purposes.
 
+- **VideoReceiver**: This component is responsible for receiving video streams from the drone's camera.
+- **VideoManager**: Manages multiple VideoReceiver instances and handles the overall video streaming and recording logic.
+- **MAVLink**: The communication protocol used for sending commands between the drone and the GCS, including commands for starting/stopping video recording.
+- **Data Logger**: Manages logging of flight data, which could be extended to include video recording management on the drone's SD card.
+- **VideoStreaming**: Manages streaming video to external services (e.g., YouTube, RTMP server).
+- **Android GCS Storage**: Handles the local storage of video files on the Android device running QGroundControl.
 
 ```mermaid
 flowchart LR
@@ -162,6 +168,30 @@ flowchart LR
     C --> F[Comm Interface]
     F --> I
 ```
+
+
+Steps to Implement
+Extend VideoReceiver to support multiple destinations:
+
+Modify VideoReceiver to support saving video streams to multiple destinations, such as local storage, SD card, and Internet streaming.
+Implement buffering and thread-safe access to handle simultaneous writes and streams.
+Modify VideoManager to manage the new functionalities:
+
+Extend VideoManager to handle commands for starting/stopping video recording on the drone's SD card.
+Ensure VideoManager can start/stop streaming to Internet services and save streams locally on the Android GCS.
+Implement MAVLink commands for video recording on SD card:
+
+Use MAVLink messages to send commands from the GCS to the drone to start and stop recording video on the drone's SD card.
+Ensure the drone's firmware supports these MAVLink commands and properly manages the SD card storage.
+Integrate Internet streaming services:
+
+Integrate with popular streaming services (e.g., YouTube, RTMP servers) to allow live streaming of the video feed.
+Handle authentication, connection setup, and streaming protocol in VideoStreaming.
+Handle local storage on Android GCS:
+
+Extend the Android app to manage local storage permissions and efficiently save video streams.
+Implement features to browse, play, and manage locally stored video files.
+
 
 [Link to relevant artifact in repository](https://github.com/mavlink/qgroundcontrol)
 
