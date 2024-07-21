@@ -207,9 +207,17 @@ flowchart LR
 
 **Commit**: `Added new video filter feature`
 
+https://github.com/mavlink/qgroundcontrol/commit/cce47c62df57c0c47ff2516429bde02c7de671c3
+
 **Issue**:
-- **Lack of Documentation**: The commit includes significant changes without adequate documentation or comments.
-- **Incomplete Testing**: No associated unit tests or integration tests to ensure the new feature works as expected.
+- **Iterator Invalidation**: VideoManager::~VideoManager() 
+ Mmodifying a container while iterating over it can lead to undefined behavior. Deleting elements from _videoReceiverData while iterating through it is a common cause of this.
+- **Missing Error Handling**: The code doesn't include any error handling mechanisms. If delete videoReceiver.receiver or GStreamer::releaseVideoSink fails, it could lead to unexpected behavior
 
 **Feedback**:
-- “Please add detailed comments and documentation for the new video filter feature. Additionally, provide unit and integration tests to validate functionality and prevent potential regressions.”
+- Additional Considerations
+Smart Pointers: Manual management of raw pointers (videoReceiver.receiver) can lead to memory leaks, double deletions, and other issues. Using smart pointers is recommended.
+Custom Deletion Logic: If receiver or sink require custom deletion logic, provide specific functions to handle their cleanup.
+Error Handling: Implement error handling mechanisms to gracefully handle potential failures during object deletion.
+Add Logging for Debugging:
+Include logging to trace the destruction process, especially useful for debugging issues on app exit..
