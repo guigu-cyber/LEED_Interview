@@ -240,9 +240,9 @@ Manage storage permissions and efficient file handling on Android devices.
 - **Missing Error Handling**: The code doesn't include any error handling mechanisms. If delete videoReceiver.receiver or GStreamer::releaseVideoSink fails, it could lead to unexpected behavior
 
 **Feedback**:
-- Additional Considerations
-Smart Pointers: Manual management of raw pointers (videoReceiver.receiver) can lead to memory leaks, double deletions, and other issues. Using smart pointers is recommended.
-Custom Deletion Logic: If receiver or sink require custom deletion logic, provide specific functions to handle their cleanup.
-Error Handling: Implement error handling mechanisms to gracefully handle potential failures during object deletion.
-Add Logging for Debugging:
+**Additional Considerations**
+- **Smart Pointers**: Manual management of raw pointers (videoReceiver.receiver) can lead to memory leaks, double deletions, and other issues. Using smart pointers is recommended.
+- **Custom Deletion Logic**: If receiver or sink require custom deletion logic, provide specific functions to handle their cleanup.
+- **Error Handling**: Implement error handling mechanisms to gracefully handle potential failures during object deletion.
+- **Add Logging for Debugging**:
 Include logging to trace the destruction process, especially useful for debugging issues on app exit..
